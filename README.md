@@ -1,0 +1,1 @@
+This app allows users to get the help they need with the DL group they already know. The user is then able to chat with someone for immediate assistance or they can then open a ticket through ServiceNow.
