@@ -5,3 +5,20 @@ footer{
     width: 100%;
     line-height: 50px;
 }
+
+body{
+    background-image: url("../Images/SSObackground.png")
+}
+
+.container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+}
+
+.jumbotron{
+    width: 500px;
+    background: white;
+    height:100%;
+}
