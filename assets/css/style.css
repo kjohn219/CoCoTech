@@ -1,4 +1,5 @@
 footer{
+    position: sticky;
     bottom: 0;
     height: 50px;
     width: 100%;
@@ -8,16 +9,13 @@ footer{
 body{
     background-image: url("../Images/SSObackground.png")
 }
-
-.container{
-    display: flex;
-    justify-content: center;
-    align-items: center;
     
-}
-
 .jumbotron{
-    width: 500px;
+    width: 600px;
     background: white;
-    height:100%;
+    padding: 10px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin: -70px 0 0 -170px;
 }
