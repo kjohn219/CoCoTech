@@ -7,12 +7,11 @@ footer{
 }
 
 body{
-    background-image: url("../Images/SSObackground.png")
+    background-image: url("./assets/Images/SSObackground.png")
 }
     
 .jumbotron{
     width: 600px;
-    background: white;
     padding: 10px;
     position: absolute;
     top: 50%;
