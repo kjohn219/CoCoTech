@@ -1,8 +1,8 @@
 // Requiring our models
 const jwt = require('jsonwebtoken');
 const userVerification = require('../controller/auth');
-const config = require('../config/index');
-const users = require('../model/users')
+const config = require('../config/pass');
+const users = require('../models/users')
 let currentUser;
 const db = require('../models');
 
