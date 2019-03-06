@@ -7,7 +7,7 @@ footer{
 }
 
 body{
-    background-image: url("./assets/Images/SSObackground.png")
+    background-image: url("../Images/SSObackground.png")
 }
     
 .jumbotron{
@@ -16,7 +16,7 @@ body{
     position: absolute;
     top: 50%;
     left: 50%;
-    margin: -50px 0 0 -290px;
+    margin: -60px 0 0 -290px;
 }
 
 .navbar-brand{
