@@ -17,6 +17,7 @@ if (config.use_env_variable) {
 } else {
   var sequelize = new Sequelize(config.database, config.username, config.password, config);
 }
+console.log('This environment is ' + env);
 
 fs
   .readdirSync(__dirname)

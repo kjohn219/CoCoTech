@@ -21,13 +21,14 @@ console.log(onHand);
   };
   
  const retreiveDLInventory = function() {
+   console.log('in retreive function, call api is next');
   $.get('/api/dlgroups').then(renderDLInventory);
 }
+console.log('go get dl list from DB');
 retreiveDLInventory();
 
 
-  // pull in identifier for the element DL chosen -- need to make the dl name ID an active button ..................TODO
-//    .......item = document.getElementById("dl name id").value;
+
 //assign variable to the DL chosen with LET statement as we need in multiple features...............................TODO
 let newOne = [];
 $("#inStock").on("click", function(){
@@ -45,9 +46,16 @@ $("#inStock").on("click", function(){
   // the ID number becomes query for or agaisnt table to pull out actual DL name to add to variable for use globally
   //returned array is list of string characters (convert to sections if possible)
   //[item id dl name 6 @the dog ran away]  in this case character 16 is the number 6 (DL ID #6)
-  console.log(newOne[16]);
+  let search = Number((newOne[16] + newOne[17]-1));
+  console.log(onHand);
+  console.log(search);
+  
+  let groupName = onHand[search].dl_name;   ///////set search variable to = DL group located at ID made up of 16, 17  for 1-99 dl entries .......................  TODO
+  console.log(groupName);
+  $('https://localhost:8250/login.html').click();
+  //href="https://cdn.datatables.net/1.10.19/css/jquery.dataTables.min.css
 });
 
-//next -- with DL  -- call table, get DL, assign to variable, move to hyperlink to section 3
+//next -- with DL  -- call table, get DL, assign to variable, move to hyperlink to section 3   (URL =====technicians.html)...........................TODO
 //after adding code to hyperlink, need authorization validation JMT, display DL on top of section 3 page
 //
