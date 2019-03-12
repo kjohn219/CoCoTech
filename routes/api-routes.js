@@ -46,6 +46,7 @@ module.exports = function(app){
     
       app.get("/api/users",function(req,res){
           res.json({ auth:true, data:users });
+          // res.sendFile(d)
       });
     }
 
