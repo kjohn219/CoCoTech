@@ -6,6 +6,8 @@
 // =============================================================
 const express = require('express');
 const path = require("path");
+// const cors = require("cors");
+
 
 require('dotenv').config();
 
@@ -25,8 +27,9 @@ app.use(express.urlencoded({ extended: true }));
 // parse application/json
 app.use(express.json());
 app.use(express.static(path.join(__dirname, './public')));
+// app.use(express.static(path.join(__dirname, './assets')))
 
-
+// app.use(cors());
 // Routes
 // =============================================================
 require('./routes/api-routes.js')(app);
@@ -39,3 +42,5 @@ db.sequelize.sync().then(function() {
     console.log('App listening on PORT ' + PORT);
   });
 });
+
+module.exports = app;
