@@ -1,23 +1,32 @@
 {
-  "name": "00-homework",
+  "name": "cocotech",
   "version": "1.0.0",
-  "description": "",
+  "description": "This app allows users to get the help they need with the DL group they already know. The user is then able to chat with someone for immediate assistance or they can then open a ticket through ServiceNow.",
   "main": "server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node server.js"
   },
-  "keywords": [],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kjohn219/CoCoTech.git"
+  },
   "author": "",
   "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/kjohn219/CoCoTech/issues"
+  },
+  "homepage": "https://github.com/kjohn219/CoCoTech#readme",
   "dependencies": {
+    "cors": "^2.8.5",
     "dotenv": "^6.2.0",
     "express": "^4.16.4",
     "fs": "0.0.1-security",
+    "jsonwebtoken": "^8.5.0",
     "mysql": "^2.16.0",
-    "mysql2": "^1.6.4",
+    "mysql2": "^1.6.5",
     "nodemon": "^1.18.10",
-    "sequelize": "^4.42.0",
+    "sequelize": "^4.43.0",
     "sequelize-cli": "^5.4.0"
   }
 }
