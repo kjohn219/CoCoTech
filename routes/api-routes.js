@@ -1,25 +1,15 @@
 // Requiring our models
 const jwt = require('jsonwebtoken');
 const userVerification = require('../assets/controller/auth');
-<<<<<<< HEAD
-const config = require('../assets/config/pass');
-=======
 const config = require('../config/pass');
 const users = require('../public/js/user')
->>>>>>> fd06d1706872968020d15c70c273a6f7577c9829
 let currentUser;
 const db = require('../models');
 
 module.exports = function(app){
-
-  
-  // GET route for retrieving all stock
+ // GET route for retrieving all available DL groups from Database (emulates integration to Outlook GAL)
   app.get('/api/dlgroups', function(req, res) {
-
-    // Here we add an 'include' property to our options in our findAll query
-    // We set the value to an array of the models we want to include in a left outer join
-    // In this case, just db.Article
-    console.log('about to call findall');
+ //  console.log('about to call findall');
     db.emailGroups.findAll({
       
       }).then(function(dlList) {
@@ -44,8 +34,26 @@ module.exports = function(app){
       res.status(401).send("You are not authorized");
     }
   });
+// GET route for retrieving all technicians whom are members of the chosen DL
+app.get('/api/technicians', function (req, res) 
+{
+//console.log(req.query)
+ db.technicians.findAll({
+   where:{
+     GROUP_NAME: req.query.group
+   }
+   }).then(function(dbTechnicians) {
 
-}
+   res.json(dbTechnicians);
+
+ }).catch(function (error) {
+   res.json({ error: error });
+ });
+});
+
+} 
+
+
 
     
       // app.use(function(req, res, next){
@@ -78,55 +86,7 @@ module.exports = function(app){
 
 // }
 
-// // This is the beginning of SAI API code minus the module export
-// // GET route for retrieving all groups
-// app.get('/api/technicians', function (req, res) 
-// {
-// console.log(req.query)
-//  // Here we add an 'include' property to our options in our findAll query
-//  // We set the value to an array of the models we want to include in a left outer join
-//  // In this case, just db.Article
-//  db.technicians.findAll({
-//    where:{
-//      GROUP_NAME:"CocoTech "+req.query.group+ " Support"
-//    }
-//    }).then(function(dbTechnicians) {
-
-//  // Here we add an 'include' property to our options in our findAll query
-//  // We set the value to an array of the models we want to include in a left outer join
-//  // In this case, just db.Article
-//    res.json(dbTechnicians);
-
-//  }).catch(function (error) {
-//    res.json({ error: error });
-//  });
-// });
 
 
-// // PUT route for updating the technician status
-// app.put('/api/TECHNICIANS/:id', function(req, res) 
-// {
-//  console.log(req.body);
-//  console.log(req.params.id);
-//  db.technicians.update
-//   (
-//    { stock_quantity: req.body.technician_status },
-//      { where: { id: req.params.id  } }
-//   ).then
-//   (
-//    function(qtyUpdate) 
-//     {   
-//        console.log('Hello there' , qtyUpdate);
-//        res.json(qtyUpdate);
-//     }
-//   ).catch
-//  (
-//   function(error) 
-//    { 
-//      console.log('error side', error); 
-//      res.json({ error: error });
-//    }
-//  );
-// });
-// } // this is extraneous end of Sai API route
+
 
