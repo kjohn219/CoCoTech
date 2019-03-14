@@ -20,6 +20,20 @@ module.exports = function(app){
     });
   });
 
+  app.post("/api/login",function(req,res){
+    if(userVerification(req.body.username,req.body.password)){
+      const token = jwt.sign({ id: req.body.username}, config.secret, {
+        expiresIn: 86400,
+        algorithm: 'HS512' // expires in 24 hours
+      });
+      currentUser = req.body.username;
+      console.log(`The token is ${token}`);
+      res.cookie('token',token).json({ auth:true, redirect:'dashboard' });
+      
+    } else {
+      res.status(401).send("You are not authorized");
+    }
+  });
 // GET route for retrieving all technicians whom are members of the chosen DL
 app.get('/api/technicians', function (req, res) 
 {
@@ -41,49 +55,31 @@ app.get('/api/technicians', function (req, res)
 
 
 
-
-
-
-
-//     app.post("/api/login",function(req,res){
-//         if(userVerification(req.body.username,req.body.password)){
-//           const token = jwt.sign({ id: req.body.username}, config.secret, {
-//             expiresIn: 86400,
-//             algorithm: 'HS512' // expires in 24 hours
-//           });
-//           currentUser = req.body.username;
-//           console.log(`The token is ${token}`);
-//           res.cookie('token',token).json({ auth:true, redirect:'success' });
-          
-//         } else {
-//           res.status(401).send("You are not authorized");
-//         }
-//       });
     
-//       // app.use(function(req, res, next){
-//       //   const token = req.headers.authorization;
-//       //   if (token) {
-//       //     jwt.verify(token, config.secret, function(err, decoded) {
-//       //       if ( err || (decoded.id != currentUser) ) {
-//       //         res.status(403).json({
-//       //           auth: false,
-//       //           message:"Incorrect or missing token"
-//       //         });
-//       //       } else {
-//       //         next();
-//       //       }    
-//       //     });
-//       //   } else {
-//       //     res.status(403).json({
-//       //       auth: false,
-//       //       message:"Incorrect or missing token"
-//       //     }); 
-//       //   }
-//       // });
+      // app.use(function(req, res, next){
+      //   const token = req.headers.authorization;
+      //   if (token) {
+      //     jwt.verify(token, config.secret, function(err, decoded) {
+      //       if ( err || (decoded.id != currentUser) ) {
+      //         res.status(403).json({
+      //           auth: false,
+      //           message:"Incorrect or missing token"
+      //         });
+      //       } else {
+      //         next();
+      //       }    
+      //     });
+      //   } else {
+      //     res.status(403).json({
+      //       auth: false,
+      //       message:"Incorrect or missing token"
+      //     }); 
+      //   }
+      // });
     
-//       // app.get("/api/users",function(req,res){
-//       //     res.json({ auth:true, data:users });
-//       // });
+      // app.get("/api/users",function(req,res){
+      //     res.json({ auth:true, data:users });
+      // });
 
 
  

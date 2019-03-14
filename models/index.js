@@ -8,7 +8,9 @@ var basename = path.basename(module.filename);
 var env = process.env.NODE_ENV || "development";
 console.log(env);
 
-var config = require(__dirname + "/../config/config")[env];
+console.log(__dirname);
+
+var config = require(__dirname + "/../assets/config")[env];
 var db = {};
 
 
