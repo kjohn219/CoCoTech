@@ -1,6 +1,13 @@
+// kickoff with technician html invoke from redirect end of app.js -- which passes expected DL name in the redirect url "group=@******DL*****"
 $(document).ready(function(){
-  console.log($(location).attr('search'))
-  
+  console.log('start');
+  console.log($(location).attr('search'));
+  console.log('end');
+  let bucket = localStorage.getItem("emailGroup")
+  console.log(bucket);
+  // let emailGroup = $(location).attr('search');
+  // emailGroup = emailGroup.slice(emailGroup.indexOf('=')+1);
+  //console.log(emailGroup);
   // $.get('/api/technicians?group=VPN',function(results){
     $.get('/api/technicians'+$(location).attr('search') ,function(results){
     for(var i = 0;i<results.length;i++){
