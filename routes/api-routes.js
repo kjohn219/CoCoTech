@@ -1,8 +1,8 @@
 // Requiring our models
 const jwt = require('jsonwebtoken');
-const userVerification = require('../assets/controller/auth');
+const userVerification = require('../controller/auth');
 const config = require('../config/pass');
-const users = require('../public/js/user')
+const users = require('../controller/user')
 let currentUser;
 const db = require('../models');
 
@@ -51,42 +51,7 @@ app.get('/api/technicians', function (req, res)
  });
 });
 
-} 
 
 
-
-    
-      // app.use(function(req, res, next){
-      //   const token = req.headers.authorization;
-      //   if (token) {
-      //     jwt.verify(token, config.secret, function(err, decoded) {
-      //       if ( err || (decoded.id != currentUser) ) {
-      //         res.status(403).json({
-      //           auth: false,
-      //           message:"Incorrect or missing token"
-      //         });
-      //       } else {
-      //         next();
-      //       }    
-      //     });
-      //   } else {
-      //     res.status(403).json({
-      //       auth: false,
-      //       message:"Incorrect or missing token"
-      //     }); 
-      //   }
-      // });
-    
-      // app.get("/api/users",function(req,res){
-      //     res.json({ auth:true, data:users });
-      // });
-
-
- 
-
-// }
-
-
-
-
+}
 

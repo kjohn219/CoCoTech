@@ -7,11 +7,11 @@ module.exports = function(app) {
   });
 
   app.get('/dashboard', function(req, res) {
-    res.sendFile(path.join(__dirname, './emailGroups.html'));
+    res.sendFile(path.join(__dirname, '/../public/emailGroups.html'));
   });
 
   app.get('/technicians', function(req, res) {
-    res.sendFile(path.join(__dirname, './technicians.html'));
+    res.sendFile(path.join(__dirname, '/../public/technicians.html'));
   });
   
   app.get('/addtickets', function(req, res) {
@@ -26,9 +26,7 @@ module.exports = function(app) {
     res.sendFile(path.join(__dirname, '/../public/index.html'));
   });
 
-  app.get('/index', function(req, res) {
-    res.sendFile(path.join(__dirname, './emailGroups.html'));
-  });
+
 
 }
 
