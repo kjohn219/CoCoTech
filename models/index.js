@@ -10,7 +10,7 @@ console.log(env);
 
 console.log(__dirname);
 
-var config = require(__dirname + "/../assets/config")[env];
+var config = require(__dirname + "/../config/config")[env];
 var db = {};
 
 
