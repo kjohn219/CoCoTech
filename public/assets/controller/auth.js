@@ -1,4 +1,4 @@
-var users = require('../../public/js/user')
+var users = require('../../js/user')
 module.exports = function(u,p){
     var result = false;
     for (var i = 0; i < user.length; i++){

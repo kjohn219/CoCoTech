@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="assets/css/reset.css"/>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
         integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous" />
-    
+        <link rel="stylesheet" href="assets/css/styleold.css" type="text/css"/>
     <title>CoCoTech | AddTicket</title>
 </head>
 
@@ -21,26 +21,37 @@
     </nav>
     </div>
 
-    <br><br><br><br><br>
+    <br>
     <div class="container">
         <p>Submit a case with us!</p>
         <form action="" method="POST" role="form">
 
             <div class="form-group">
-                <input type="text" class="form-control center-element" id="SSO" placeholder="Your SSO">
+                <input type="text" class="form-control center-element" id="name" placeholder="Name to be Contacted">
             </div>
 
             <div class="form-group">
-                <input type="text" class="form-control center-element" id="phone" placeholder="Your Phone">
+                <input type="text" class="form-control center-element" id="phone" placeholder="Contact Phone">
             </div>
+
+            <div class="form-group">
+                <input type="text" class="form-control center-element" id="emailGroup" placeholder="Expected Support Team">
+            </div>
+
+            <div class="form-group">
+                <input type="text" class="form-control center-element" id="contactEmail" placeholder="Contact Email Address">
+            </div>
+
+        <!--
             <div class="form-group">
                 <select class="custom-select form-control center-element" id="typeid">
-                    <option selected>Case Category</option>
+                    <option selected>Expected Support Team</option>
                     <option value="DNS Service Case">DNS Service Case</option>
                     <option value="Outlook Email Case">Outlook Email Case</option>
                     <option value="VPN Access Case">VPN Access Case</option>
                 </select>
             </div>
+        -->
             <div class="form-group">
                 <input type="text" class="form-control center-element" id="description" placeholder="Case Description">
             </div>
