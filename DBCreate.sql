@@ -2,7 +2,7 @@
 
 -- DROP DATABASE IF EXISTS cocotech;
 -- CREATE DATABASE cocotech;
-USE cocotech;
+USE u311cgkmmksb0cud;
 
 CREATE TABLE emailgroups (
     id INTEGER AUTO_INCREMENT NOT Null,
