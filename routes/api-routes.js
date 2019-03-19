@@ -5,14 +5,15 @@ const config = require('../config/pass');
 const users = require('../controller/user')
 let currentUser;
 const db = require('../models');
-
+console.log(db.emailGroups);
 module.exports = function(app){
  // GET route for retrieving all available DL groups from Database (emulates integration to Outlook GAL)
   app.get('/api/dlgroups', function(req, res) {
- //  console.log('about to call findall');
+ console.log('about to call findall');
     db.emailGroups.findAll({
-      
-      }).then(function(dlList) {
+      attributes:['id','dl_name'],
+    }).then(function(dlList) {
+        console.log('dlList');
       res.json(dlList);
     
     }).catch(function(error) {
@@ -31,14 +32,16 @@ module.exports = function(app){
       res.cookie('token',token).json({ auth:true, redirect:'dashboard' });
       
     } else {
+      console.log('hello world here');
       res.status(401).send("You are not authorized");
     }
   });
 // GET route for retrieving all technicians whom are members of the chosen DL
 app.get('/api/technicians', function (req, res) 
 {
-//console.log(req.query)
+console.log(req.query)
  db.technicians.findAll({
+   attributes: ['id', 'SSO','NAME','GROUP_NAME','STATUS'],
    where:{
      GROUP_NAME: req.query.group
    }

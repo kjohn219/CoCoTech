@@ -1,6 +1,6 @@
 $(document).ready(function(){
     $("#submit").on("click", function(evt){
-      evt.preventDefault();    
+      evt.preventDefault();
       $.ajax({
         method: "POST",
         url: "api/login",
@@ -11,16 +11,17 @@ $(document).ready(function(){
         dataType: "json"
       })
       .done(function( response ) {
+        console.log('logon success');
         if(response.auth){
           window.location+=response.redirect;
         }
       })
       .fail(function(err,response){
-     
-          $("#errMsg").show();
+     console.log('login fail')
+          // $("#errMsg").show(500);
+      alert('Logon Failed');  
         
-        
-      })
+      }) .always(function(){ console.log('always')});
   
     });
   

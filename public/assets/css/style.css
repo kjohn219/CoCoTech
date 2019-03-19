@@ -20,4 +20,6 @@ body{
 .navbar-brand{
     font-size: 50px;
 }
-
+#errMsg {
+    display: none
+}
