@@ -24,17 +24,18 @@
             <form class="login bg-blue">
                 <div class="form-group">
                     <label for="exampleInpuSSO1">SSO</label>
-                    <input type="text" class="form-control" id="exampleInpuSSO1" placeholder="SSO">
+                    <input required type="text" class="form-control" id="exampleInpuSSO1" placeholder="SSO">
                     <small id="ssoHelp" class="form-text text-muted"></small>
                 </div>
                 <div class="form-group">
                     <label for="exampleInputPassword1">Password</label>
-                    <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+                    <input required type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
                 </div>
                 <button id="submit" type="submit" class="btn btn-primary">Submit</button>
             </form>
         </div>
     </div>
+     <div id="errMsg" >Logon Fails</div>
 
     <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
         crossorigin="anonymous"></script>
