@@ -35,6 +35,10 @@ app.use(express.static(path.join(__dirname, './public')));
 require('./routes/api-routes.js')(app);
 require('./routes/html-routes.js')(app);
 
+// add Helmet as required security
+const helment = require ('helmet');
+app.use(helmet());
+
 // Syncing our sequelize models and then starting our Express app
 // =============================================================
 db.sequelize.sync().then(function() {
