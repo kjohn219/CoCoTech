@@ -4,18 +4,18 @@ USE cocotech; -- use this db for subsequent use (make this primary/active)
 -- seed data to insert into DL (email groups) table -- 
 
 
-INSERT INTO emailGroups(dl_name) VALUES ('@peter paul and mary');
-INSERT INTO emailGroups(dl_name) VALUES ('@zombie town');
-INSERT INTO emailGroups(dl_name) VALUES ('@firewall');
-INSERT INTO emailGroups(dl_name) VALUES ('@BAAN ERP');
-INSERT INTO emailGroups(dl_name) VALUES ('@webMethods Platform Operations');
-INSERT INTO emailGroups(dl_name) VALUES ('@CocoTech DNS Support');
-INSERT INTO emailGroups(dl_name) VALUES ('@CocoTech VPN Support');
-INSERT INTO emailGroups(dl_name) VALUES ('@CocoTech Outlook Support');
-INSERT INTO emailGroups(dl_name) VALUES ('@SMAX ERP');
-INSERT INTO emailGroups(dl_name) VALUES ('@Informatica support team');
-INSERT INTO emailGroups(dl_name) VALUES ('@L3 Unix team');
-INSERT INTO emailGroups(dl_name) VALUES ('@Servers and Storage');
+INSERT INTO emailgroups(dl_name) VALUES ('@peter paul and mary');
+INSERT INTO emailgroups(dl_name) VALUES ('@zombie town');
+INSERT INTO emailgroups(dl_name) VALUES ('@firewall');
+INSERT INTO emailgroups(dl_name) VALUES ('@BAAN ERP');
+INSERT INTO emailgroups(dl_name) VALUES ('@webMethods Platform Operations');
+INSERT INTO emailgroups(dl_name) VALUES ('@CocoTech DNS Support');
+INSERT INTO emailgroups(dl_name) VALUES ('@CocoTech VPN Support');
+INSERT INTO emailgroups(dl_name) VALUES ('@CocoTech Outlook Support');
+INSERT INTO emailgroups(dl_name) VALUES ('@SMAX ERP');
+INSERT INTO emailgroups(dl_name) VALUES ('@Informatica support team');
+INSERT INTO emailgroups(dl_name) VALUES ('@L3 Unix team');
+INSERT INTO emailgroups(dl_name) VALUES ('@Servers and Storage');
 
 
 
