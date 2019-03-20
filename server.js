@@ -41,10 +41,14 @@ app.use(helmet());
 
 // Syncing our sequelize models and then starting our Express app
 // =============================================================
-db.sequelize.sync().then(function() {
-  app.listen(PORT, function() {
-    console.log('App listening on PORT ' + PORT);
+if(process.env.NODE_ENV !== 'development') {
+  db.sequelize.sync().then(function() {
+    app.listen(PORT, function() {
+      console.log('App listening on PORT ' + PORT);
+    });
+  }).catch(function(err) {
+    console.log('Error: ', err.message);
   });
-});
+}
 
 module.exports = app;
